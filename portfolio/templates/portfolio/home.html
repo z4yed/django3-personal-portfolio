@@ -1,0 +1,44 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+	<h1 class="text-center">Zayed's Portfolio</h1>
+
+	<img class="rounded img-fluid mx-auto d-block" src="{% static 'portfolio/zayed.jpg' %}" height="300px" width="250px">
+
+	<h3 class="display-4 text-center">Junior Software Engineer</h3>	
+
+
+	<h3 class="alert alert-warning"> Projects I have worked on. </h3>
+
+
+	<div class="row  mt-5">
+		{% for project in projects %}
+
+		<div class="col-4">
+			<div class="card" style="width: 18rem;">
+				<img src="{{ project.image.url }}" class="card-img-top" height="200" width="200" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">{{ project.title }}</h5>
+					<p class="card-text">{{ project.description }}</p>
+					{% if project.url %}
+					<a href="{{ project.url }}" target="_blank" class="btn btn-primary">View Details</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+
+ 		{% endfor %}
+
+	</div>
+
+
+
+
+
+</div>
+
+
+{% endblock content %}

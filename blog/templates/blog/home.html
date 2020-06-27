@@ -1,0 +1,29 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+<div class="container">
+	<div style="background-color: silver">
+		<h2 class="display-5">Total {{ blogs.count }} blog{{blogs|pluralize}} available.</h2> 
+	</div>
+	
+	{% for blog in blogs %}
+	<div>
+		
+		<h2><a class="display-5" href="{% url 'blog-detail' blog.id %}"> {{ blog.title }}</a></h2>
+
+	    <h3>{{blog.time|date:"D,d M Y"}}</h3>
+
+	    <p class="lead"> {{ blog.description|striptags|truncatechars:100 }} </p>
+
+
+	</div>
+
+	{% endfor %}
+
+	
+</div>
+
+
+
+
+{% endblock content %}
