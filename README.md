@@ -1,3 +1,3 @@
 # django3-personal-portfolio
 
-visit : z4yed.pythonanywhere.com
+visit : https://z4yed.pythonanywhere.com/
